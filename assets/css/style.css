@@ -1,0 +1,245 @@
+/* --- Variables y Reset --- */
+:root {
+    --primary-color: #2c3e50; /* Azul oscuro académico */
+    --accent-color: #e67e22;  /* Naranja sutil para llamadas a la acción */
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --font-heading: 'Lora', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* --- Layout --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.nav-links { display: flex; gap: 20px; align-items: center; }
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.nav-links a:hover { color: var(--accent-color); }
+
+.btn-highlight {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.btn-highlight:hover { background: #34495e; }
+
+/* --- Hero Section --- */
+.hero {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.hero-img img {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* --- Cards Section --- */
+.section { padding: 60px 0; }
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card h3 { margin-bottom: 10px; font-family: var(--font-heading); }
+.link-text {
+    color: var(--accent-color);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials a { color: var(--white); margin-left: 15px; font-size: 1.2rem; }
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    .hero-content { flex-direction: column; text-align: center; }
+    .nav-links { display: none; } /* Aquí se implementaría menú hamburguesa con JS */
+}
+
+
+/* --- Estilos Página En Construcción --- */
+
+.construction-section {
+    /* Ocupa el alto de la pantalla menos el header y footer aproximados */
+    min-height: 70vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.construction-content {
+    max-width: 600px;
+    padding: 40px;
+}
+
+.icon-box {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    opacity: 0.8;
+    animation: float 3s ease-in-out infinite;
+}
+
+.construction-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.construction-content p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.construction-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botón secundario (borde solo) */
+.btn-outline {
+    display: inline-block;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 20px; /* Alineación con el otro botón */
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Animación suave de flotación para el icono */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Ajuste móvil */
+@media (max-width: 480px) {
+    .construction-content h1 { font-size: 2rem; }
+    .construction-actions { flex-direction: column; }
+    .btn, .btn-outline { margin-top: 10px; width: 100%; text-align: center; }
+}
